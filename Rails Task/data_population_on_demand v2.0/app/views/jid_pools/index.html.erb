@@ -1,0 +1,10 @@
+<div>
+<h1>Populating JIDs</h1>
+<br><br>
+<%= form_tag populate_jid_pools_path, method: :post do %>
+  <b><%= label_tag :count, "Enter the number of jids to populate:" %></b>
+  <%= text_field_tag :count %><br><br>
+  <%= submit_tag "Populate JIDs" %>
+<% end %>
+<br>
+</div>
