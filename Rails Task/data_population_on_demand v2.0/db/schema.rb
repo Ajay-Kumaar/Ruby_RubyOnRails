@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_04_16_111400) do
+ActiveRecord::Schema.define(version: 2024_04_18_064654) do
 
   create_table "jid_pools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "jid"
@@ -19,9 +19,18 @@ ActiveRecord::Schema.define(version: 2024_04_16_111400) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "thresholds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "threshold"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "jid"
+    t.string "name"
     t.string "email"
-    t.string "jid"
+    t.string "phone_number"
+    t.string "address"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

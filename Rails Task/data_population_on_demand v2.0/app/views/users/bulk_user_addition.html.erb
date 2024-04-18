@@ -1,0 +1,10 @@
+<div>
+<h1>Bulk User Addition</h1>
+<br><br>
+<%= form_tag process_manual_user_addition_users_path, method: :post do %>
+  <b><%= label_tag :count, "Enter count to populate users:" %></b>
+  <%= number_field_tag :count %><br><br>
+  <%= submit_tag "Submit" %>
+<% end %><br><br>
+
+</div>

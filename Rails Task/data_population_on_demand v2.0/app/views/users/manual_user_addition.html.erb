@@ -1,0 +1,20 @@
+<div>
+<h1>Manual User Addition</h1>
+<br><br>
+<%= form_tag process_manual_user_addition_users_path, method: :post do %>
+  <b><%= label_tag :name, "Enter your name:" %></b>
+  <%= text_field_tag :name %><br><br>
+
+  <b><%= label_tag :email, "Enter your email:" %></b>
+  <%= text_field_tag :email %><br><br>
+
+  <b><%= label_tag :phone, "Enter your phone number:" %></b>
+  <%= text_field_tag :phone %><br><br>
+
+  <b><%= label_tag :address, "Enter your address:" %></b>
+  <%= text_field_tag :address %><br><br>
+
+  <%= submit_tag "Submit User details" %>
+<% end %><br><br>
+
+</div>
