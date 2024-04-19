@@ -1,0 +1,12 @@
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: center;
+  margin: auto
+}
+th,td {
+  padding: 8px
+}
+#no_data_table {
+  width:80%
+}

@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     post :bulk_user_addition, on: :collection
     post :show_users, on: :collection
     post :process_manual_user_addition, on: :collection
+    post :process_bulk_user_addition, on: :collection
+    post :process_show_users, on: :collection
   end
 
   root to: 'jid_pools#index'
