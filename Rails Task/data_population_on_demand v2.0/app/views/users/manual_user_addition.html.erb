@@ -2,20 +2,23 @@
 <h1>Manual User Addition</h1>
 <br><br>
 
-<%= form_tag process_manual_user_addition_users_path, method: :post do %>
-  <b><%= label_tag :name, "Enter your name:" %></b>
-  <%= text_field_tag :name %><br><br>
+<%= form_with url: process_manual_user_addition_users_path, method: :post, local: true do |form| %>
+  <b><%= form.label :name, "Name" %></b>
+  <%= form.text_field :name, placeholder: "Enter your name"%><br><br>
 
-  <b><%= label_tag :email, "Enter your email:" %></b>
-  <%= text_field_tag :email %><br><br>
+  <b><%= form.label :email, "Email" %></b>
+  <%= form.text_field :email, placeholder: "Enter your email"%><br><br>
+  
+  <b><%= form.label :phone_number, "Phone Number" %></b>
+  <%= form.text_field :phone_number, placeholder: "Enter your phone number"%><br><br>
 
-  <b><%= label_tag :phone_number, "Enter your phone number:" %></b>
-  <%= text_field_tag :phone_number %><br><br>
+  <b><%= form.label :address, "Address" %></b>
+  <%= form.text_field :address, placeholder: "Enter your address"%><br><br>
 
-  <b><%= label_tag :address, "Enter your address:" %></b>
-  <%= text_field_tag :address %><br><br>
-
-  <%= submit_tag "Submit" %>
-<% end %><br><br>
+  <%= form.submit "Submit" %>
+  <%= link_to jid_pools_path, method: :get do %>
+    <%= submit_tag "Back" %>
+  <% end %>
+<% end %>
 
 </div>

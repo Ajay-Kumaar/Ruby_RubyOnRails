@@ -1,12 +1,36 @@
 table, th, td {
-  border: 1px solid white;
+  border: 2px solid white;
   border-collapse: collapse;
   text-align: center;
   margin: auto
 }
-th,td {
+
+th, td {
   padding: 8px
 }
+
+#data_table {
+  width: 80%;
+}
+
 #no_data_table {
-  width:80%
+  width: 80%
+}
+
+.table_header:hover {
+  background: black;
+}
+
+tr:nth-child(even) {
+  background: lightslategray;
+  color: black
+}
+
+tr:hover {
+  background: rgb(49, 49, 233);
+  color: white
+}
+
+.link_color {
+  color: white
 }

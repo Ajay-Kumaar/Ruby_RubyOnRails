@@ -1,0 +1,24 @@
+<div>
+<h1>Edit Details</h1>
+<br><br>
+
+<%= form_with model: @user, url: process_edit_user_details_users_path(id: @user.id), method: :post, local: true do |form| %>
+  <b><%= form.label :name, "Name" %></b>
+  <%= form.text_field :name %><br><br>
+
+  <b><%= form.label :email, "Email" %></b>
+  <%= form.text_field :email, disabled: true %><br><br>
+  
+  <b><%= form.label :phone_number, "Phone Number" %></b>
+  <%= form.text_field :phone_number %><br><br>
+
+  <b><%= form.label :address, "Address" %></b>
+  <%= form.text_field :address %><br><br>
+
+  <%= form.submit "Submit" %>
+  <%= link_to show_users_users_path, method: :post do %>
+    <%= submit_tag "Back" %>
+  <% end %>
+<% end %>
+
+</div>

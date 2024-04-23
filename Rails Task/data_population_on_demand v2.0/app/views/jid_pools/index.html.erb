@@ -4,13 +4,33 @@
 
 <%= form_tag threshold_jid_pools_path, method: :post do %>
   <b><%= label_tag :count, "Enter the Threshold value:" %></b>
-  <%= number_field_tag :count %><br><br>
+  <%= number_field_tag :count, nil, min: 1 %><br><br>
   <%= submit_tag "Set" %>
 <% end %><br><br>
 
-<%= form_tag populate_jid_pools_path do %>
+<%= form_tag populate_jid_pools_path method: :post do %>
   <%= submit_tag "Populate JIDs" %>
 <% end %>
 
 <br>
+</div>
+
+<br><br>
+
+<div>
+<h1>Populating Users</h1>
+<br><br>
+
+<%= form_tag manual_user_addition_users_path, method: :post do %>
+  <%= submit_tag "Manual user addition" %>
+<% end %><br>
+
+<%= form_tag bulk_user_addition_users_path, method: :post do %>
+  <%= submit_tag "Bulk user addition" %>
+<% end %><br>
+
+<%= form_tag show_users_users_path, method: :post do %>
+  <%= submit_tag "Show users" %>
+<% end %><br>
+
 </div>

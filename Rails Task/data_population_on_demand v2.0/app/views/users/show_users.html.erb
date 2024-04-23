@@ -1,15 +1,17 @@
 <div>
 <h1>List of Users</h1>
 <br><br>
+
 <% if (@users.size >= 1) %>
-  <table>
-    <tr>
+  <table id="data_table">
+    <tr class="table_header">
       <th>S.No.</th>
       <th>Jid</th>
       <th>Name</th>
       <th>Email</th>
       <th>Phone Number</th>
       <th>Address</th>
+      <th>Modify</th>
     </tr>
     <% @users.each do |user| %>
       <tr>
@@ -19,13 +21,14 @@
         <td><%= user.email %></td>
         <td><%= user.phone_number %></td>
         <td><%= user.address %></td>
+        <td><%= link_to "Edit", edit_user_details_users_path(id: user.id), method: :post, class: 'link_color' %> <%= link_to "Delete", delete_user_details_users_path(id: user.id), method: :post, data: { confirm: 'Are you sure?' }, class: 'link_color' %></td>
       </tr>
     <% end %>
   </table>
   <br><br>
 <% else %>
   <table id="no_data_table">
-    <tr>
+    <tr class="table_header">
       <th>S.No.</th>
       <th>Jid</th>
       <th>Name</th>
@@ -40,8 +43,8 @@
   <br><br>
 <% end %>
 
-<%= form_tag users_path, method: :get do %>  
-  <%= submit_tag "Home" %>
+<%= form_tag jid_pools_path, method: :get do %>  
+  <%= submit_tag "Back" %>
 <% end %>
 
 </div>

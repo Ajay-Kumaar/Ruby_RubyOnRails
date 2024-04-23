@@ -4,8 +4,11 @@
 
 <%= form_tag process_bulk_user_addition_users_path, method: :post do %>
   <b><%= label_tag :count, "Enter count to populate users:" %></b>
-  <%= number_field_tag :count %><br><br>
+  <%= number_field_tag :count, nil, min: 1 %><br><br>
   <%= submit_tag "Submit" %>
+  <%= link_to jid_pools_path, method: :get do %>
+    <%= submit_tag "Back" %>
+  <% end %>
 <% end %><br><br>
 
 </div>
